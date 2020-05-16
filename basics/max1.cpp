@@ -20,5 +20,15 @@ int main(int argc, char* argv[])
 	string const s2{ "math" };
 	cout << "s1 = " << s1 << ", s2 = " << s2
 		 << ", max(s1, s2): " << max(s1, s2) << endl;
+
+	/* int 4 is cast to a double so that the deduced type of the template parameter T can be "double."
+	Without the cast, this will be an error because T can be deduced as	either int or double.
+	*/
+	cout << max(static_cast<double>(4), 7.2) << '\n';
+
+	// Explicitly specify the type of T to prevent the compiler from attempting type deduction.
+	cout << max<double>(4, 7.2) << '\n';
+
+	cout << endl;
 	return 0;
 }
