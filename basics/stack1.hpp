@@ -1,5 +1,8 @@
 #include <vector>
 #include <cassert>
+#include <iostream>
+#include <algorithm>
+#include <iterator>
 
 template<typename T>
 class Stack
@@ -12,6 +15,9 @@ public:
 	void pop();
 	T const& top() const;
 	bool empty() const { return elems.empty(); }
+
+	template<typename U>
+	friend std::ostream& operator<<(std::ostream& os, Stack<U> const& s);
 };
 
 template<typename T>
@@ -32,4 +38,12 @@ T const& Stack<T>::top() const
 {
 	assert(!empty());
 	return elems.back();  // Return a copy of the last element.
+}
+
+template<typename U>
+std::ostream& operator<<(std::ostream& os, Stack<U> const& s)
+{
+	copy(s.elems.cbegin(), s.elems.cend(),
+		std::ostream_iterator<U const&>{os, " "});
+	return os;
 }

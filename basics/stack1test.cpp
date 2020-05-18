@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <utility>
 #include "stack1.hpp"
 
 using namespace std;
@@ -19,6 +20,22 @@ int main(int argc, char* argv[])
 
 	stringStack.pop();
 	cout << "Is stringStack empty? " << stringStack.empty() << endl;
+
+	stringStack.push("Welcome");
+	stringStack.push("to");
+	stringStack.push("C++.");
+	cout << stringStack << '\n';
+	
+	Stack<pair<int, int>> pairStack;
+	pairStack.push({ 4, 5 });
+	pairStack.push({ 6, 7 });
+
+	// The following will throw an error because
+	// operator<< is not defined for element type std::pair<>.
+	// cout << pairStack;
+
+	cout << pairStack.top().first << ", ";
+	cout << pairStack.top().second << endl;
 
 	return 0;
 }
