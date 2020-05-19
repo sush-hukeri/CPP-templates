@@ -2,6 +2,7 @@
 #include <string>
 #include <utility>
 #include "stack1.hpp"
+#include "stack2.hpp"
 
 using namespace std;
 
