@@ -1,3 +1,4 @@
+#pragma once
 #include <vector>
 #include <cassert>
 #include <iostream>
@@ -16,6 +17,9 @@ public:
 	T const& top() const;
 	bool empty() const { return elems.empty(); }
 
+	/*
+	We cannot use T as the template parameter again because this inner T will hide the outer T. Hence, we use U.
+	*/
 	template<typename U>
 	friend std::ostream& operator<<(std::ostream& os, Stack<U> const& s);
 };
