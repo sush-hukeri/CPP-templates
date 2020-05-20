@@ -36,7 +36,15 @@ int main(int argc, char* argv[])
 	// cout << pairStack;
 
 	cout << pairStack.top().first << ", ";
-	cout << pairStack.top().second << endl;
+	cout << pairStack.top().second << '\n';
+
+	// Alias declaration
+	using DoubleStack = Stack<double>;
+	DoubleStack double_stack;
+	double_stack.push(7.10);
+	double_stack.push(27.44);
+	double_stack.push(3.05);
+	cout << double_stack << endl;
 
 	return 0;
 }
