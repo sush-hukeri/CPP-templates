@@ -16,7 +16,7 @@ public:
 	}
 
 	// Copy Constructor
-	Person(Person& const p) : name{ p.name } {
+	Person(Person const& p) : name{ p.name } {
 		cout << "COPY-CONSTR Person " << name << '\n';
 	}
 
