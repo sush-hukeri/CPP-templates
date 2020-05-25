@@ -9,7 +9,7 @@ class Person
 private:
 	string name;
 public:
-	// Generic constructor for passed inlin name:
+	// Generic constructor for passed inline name:
 	template<typename T>
 	explicit Person(T&& n) : name{ forward<T>(n) } {
 		cout << "TMPL-CONSTR Person " << name << '\n';
