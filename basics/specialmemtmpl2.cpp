@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
 	Person p2{ "tmp" }; // Calls TMPL-CONSTR
 
 	// Person p3{ p1 };  // ERROR because according to the overload resolution
-						 // operator, for a non-constant lvalue Person p, 
+						 // rules of C++, for a non-constant lvalue Person p, 
 						 // the member template is a better match than the
 						 // copy constructor.
 
