@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
     cout << "First:\n";
     /* The following first calls f(1, 2.2, "hello")
      * which, after calling g(1), calls f(2.2, "hello")
-     * which calls f("hello"), which then calls f()
+     * which, after calling g(2), calls f("hello"), which then calls f()
      * */
     f(1, 2.2, "hello");
 

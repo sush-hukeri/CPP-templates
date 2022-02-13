@@ -21,7 +21,7 @@ public:
 
 int main(int argc, char* argv[])
 {
-	vector<int> primes{ 2, 3, 5, 7, 11, 17,19 };
+	vector<int> primes{ 2, 3, 5, 7, 11, 17, 19 };
 
 	foreach(primes.begin(), primes.end(), func); // Function as callable (decays to pointer)
 	foreach(primes.begin(), primes.end(), &func); // Function pointer as callable
